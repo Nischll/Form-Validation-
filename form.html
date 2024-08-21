@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/image/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <title>Employee Registration</title>
+  <link rel="stylesheet" href="form.css">
+  <script src="form.js" defer></script>
+</head>
+<body>
+<div class="wrapper">
+  <div class="outerBody">
+    
+    <main class="container">
+
+      <!-- Picture Display Section -->
+      <section class="imageContainer">
+        <div class="image">
+          <img src="/image/pic3.jpg" alt="">
+
+          <!-- <div class="text1">
+            <span>Write something</span>
+          </div>
+          <div class="text2">
+            <span>Write </span>
+          </div> -->
+        </div>
+      </section>
+
+      <!-- Form Section -->
+      <section class="formContainer">
+        <div class="heading">
+          <span>Employee Registration Form</span>
+        </div>
+
+        <div class="form">
+          <form id="form">
+
+            <div class="nameField">
+              <div class="firstname">
+                <input type="text" id="firstname" name="Firstname" placeholder="firstname" value="" required autocomplete="off">
+                <div class="error" id="firstnameError"></div>        
+              </div>
+
+              <div class="lastname">
+                <input type="text" id="lastname" name="Lastname" placeholder="lastname" value="" required autocomplete="off">
+                <div class="error" id="lastnameError"></div>
+              </div>
+            </div>
+            
+            <div class="gender-depart">
+              <div class="gender">
+                <label for="gender" id="gender">Gender</label>
+                
+
+                <div class="radioButton">
+                  <section class="radio1">
+                    <input type="radio" id="male" name="Gender" value="Male">
+                    <label for="male" >Male</label>
+                    
+                  </section>
+
+                  <section class="radio2">
+                    <input type="radio" id="female" name="Gender" value="Female" >
+                    <label for="female" >Female</label>
+                  </section> 
+                </div>
+                <div class="error" id="genderError"></div>
+              </div>
+              
+              <div class="department" required autocomplete="off">
+                <!-- <label for="department" id="department">Department</label> -->
+                <select id="department" name="Department" >
+                  <option value="Department"> Department</option>
+                  <option value="IT Support"> IT Support</option>
+                  <option value="Network">Network</option>
+                  <option value="Database">Database</option>
+                  <option value="Software Development">Software Development</option>
+                  <option value="Project Management">Project Management</option>
+                  <option value="Human Resource">Human Resource</option>
+                </select>
+                <div class="error" id="departmentError"></div>
+              </div>
+            </div>
+
+
+            <div class="program">
+              <label for="program" id="program" name="program">Programs</label>
+              <div class="error" id="programError">error</div>
+
+              <div class="checkbox" required autocomplete="off">
+                <div class="box">
+                  <input type="checkbox" id="java" name="java" value="Java">
+                  <label for="java">Java</label>
+                </div>
+
+                <div class="box">
+                  <input type="checkbox" id="react" name="react" value="React">
+                  <label for="react">React</label>
+                </div>
+
+                <div class="box">
+                  <input type="checkbox" id="python" name="python" value="Python">
+                  <label for="python">Python</label>
+                </div>
+
+                <div class="box">
+                  <input type="checkbox" id="angular" name="angular" value="Angular">
+                  <label for="angular">Angular</label>
+                </div>
+
+                <div class="box">
+                  <input type="checkbox" id="php" name="php" value="PHP">
+                  <label for="php">PHP</label>
+                </div>
+
+                <div class="box">
+                  <input type="checkbox" id="ruby" name="ruby" value="Ruby">
+                  <label for="ruby">Ruby</label>
+                </div>
+
+                <div class="box">
+                  <input type="checkbox" id="sql" name="sql" value="SQL">
+                  <label for="sql">SQL</label>
+                </div>
+
+                <div class="box">
+                  <input type="checkbox" id="c++" name="c++" value="C++">
+                  <label for="c++">C++</label>
+                </div>
+
+                <div class="box">
+                  <input type="checkbox" id="c#" name="c#" value="C#">
+                  <label for="c#">C#</label>
+                </div>
+
+                <div class="box">
+                  <input type="checkbox" id="node.js" name="node.js" value="Node.js">
+                  <label for="node.js">Node.js</label>
+                </div>
+              </div>
+            </div>
+            
+            <div class="button" >
+              <button type="submit" id="save">SAVE</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+</body>
+</html>
