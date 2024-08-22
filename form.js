@@ -7,8 +7,11 @@ document.querySelector(".button").addEventListener('click', (e) => {
   const male = document.getElementById('male');
   const female = document.getElementById('female');
   const department = document.getElementById('department');
-  const program = document.querySelectorAll('.box');
-
+  const program = document.querySelector('.checkbox');
+  const confirm = document.getElementById('confirm-box');
+  const confirmYes = document.getElementById('confirm-yes');
+  const confirmCancel = document.getElementById('confirm-no');
+  const dataSend = document.getElementsByClassName('form-value');
   // REGEX
   const firstnameRegex = /^[A-za-z]{3,20}$/;
   const lastnameRegex = /^[A-za-z]{3,20}$/;
@@ -60,7 +63,31 @@ document.querySelector(".button").addEventListener('click', (e) => {
   };
 
 
+
+  // for storing value
+  let formValue = [];
+
+  // FORM SUBMIT SUCCESSFUL 
   if (isValid) {
-    alert('successful');
-  }
+    confirm.classList.add("confirm-popup");
+  };
+
+  // YES CONFIRM BOX
+  confirmYes.addEventListener('click', () => {
+    Array.from(dataSend).forEach((curElem) => {
+      formValue.push(curElem.value)
+    });
+    Array.from(dataSend).forEach((curElem) => {
+      curElem.value = "";
+    });
+    console.log(formValue);
+    confirm.classList.remove("confirm-popup");
+  })
+
+
+  // CANCEL CONFIRM BOX
+  confirmCancel.addEventListener('click', () => {
+    confirm.classList.remove("confirm-popup");
+  });
+  
 });

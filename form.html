@@ -16,6 +16,14 @@
   <div class="outerBody">
     
     <main class="container">
+      <div class="confirm" id="confirm-box">
+        <h2>Are you sure you want to proceed?</h2>
+        <div class="confirm-buttons">
+          <button class="confirm-yes" id ="confirm-yes">Yes</button>
+          <button class="confirm-no" id="confirm-no">No</button>
+        </div>
+      </div>
+
 
       <!-- Picture Display Section -->
       <section class="imageContainer">
@@ -42,24 +50,24 @@
 
             <div class="nameField">
               <div class="firstname">
-                <input type="text" id="firstname" name="Firstname" placeholder="firstname" value="" required autocomplete="off">
+                <input type="text" class="form-value" id="firstname" name="Firstname" placeholder="firstname" value="" required autocomplete="off">
                 <div class="error" id="firstnameError"></div>        
               </div>
 
               <div class="lastname">
-                <input type="text" id="lastname" name="Lastname" placeholder="lastname" value="" required autocomplete="off">
+                <input type="text" id="lastname" class="form-value" name="Lastname" placeholder="lastname" value="" required autocomplete="off">
                 <div class="error" id="lastnameError"></div>
               </div>
             </div>
             
             <div class="gender-depart">
               <div class="gender">
-                <label for="gender" id="gender">Gender</label>
+                <label for="gender" id="gender" class="form-value">Gender</label>
                 
 
                 <div class="radioButton">
                   <section class="radio1">
-                    <input type="radio" id="male" name="Gender" value="Male">
+                    <input type="radio" id="male"  name="Gender" value="Male">
                     <label for="male" >Male</label>
                     
                   </section>
@@ -90,7 +98,7 @@
 
             <div class="program">
               <label for="program" id="program" name="program">Programs</label>
-              <div class="error" id="programError">error</div>
+              <span class="error" id="programError"></span>
 
               <div class="checkbox" required autocomplete="off">
                 <div class="box">
