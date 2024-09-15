@@ -1,4 +1,4 @@
-document.querySelector(".button").addEventListener('click', (e) => {
+document.getElementById("form").addEventListener('submit', (e) => {
   e.preventDefault();
 
   const firstname = document.getElementById('firstname').value;
@@ -9,7 +9,7 @@ document.querySelector(".button").addEventListener('click', (e) => {
   const confirm = document.getElementById('confirm-box');
   const confirmYes = document.getElementById('confirm-yes');
   const confirmCancel = document.getElementById('confirm-no');
-  const dataSend = document.getElementsByClassName('form-value');
+  // const dataSend = document.getElementsByClassName('form-value');
 
   // REGEX
   const firstnameRegex = /^[A-Za-z]{3,20}$/;
@@ -67,9 +67,12 @@ document.querySelector(".button").addEventListener('click', (e) => {
     isValid = false;
   }
 
-  // for storing value
-  if (isValid) {
-    const formValue = {
+  //  If all inputs are passed through validation
+  if (isValid === true) {
+
+     // FORM SUBMIT SUCCESSFUL 
+    confirm.classList.add("confirm-popup");
+    var formValue = {
       Firstname: firstname,
       Lastname: lastname,
       Gender: genderValue,
@@ -77,36 +80,28 @@ document.querySelector(".button").addEventListener('click', (e) => {
       Programs: selectedPrograms
     };
 
-    // FORM SUBMIT SUCCESSFUL 
-    confirm.classList.add("confirm-popup");
-
     // YES CONFIRM BOX
-    confirmYes.addEventListener('click', () => {
+    confirmYes.onclick= () => {
+      // for storing value
+      
       console.log(formValue);
+      document.getElementById('form').reset();
 
       // Reset all form fields
-      Array.from(dataSend).forEach((curElem) => {
-        curElem.value = "";
-      });
-
-      // Reset radio buttons
-      male.checked = false;
-      female.checked = false;
-
-      // Reset dropdown
-      department.selectedIndex = 0;
-
-      // Reset checkboxes
-      checkboxes.forEach(function(checkbox) {
-        checkbox.checked = false;
-      });
-
       confirm.classList.remove("confirm-popup");
-    });
-  }
+    };  
+  };
 
   // CANCEL CONFIRM BOX
   confirmCancel.addEventListener('click', () => {
+    isValid = false;
     confirm.classList.remove("confirm-popup");
+    
+    //RESET ALL DATA STORED IN OBJECT
+    // const storedData = Object.keys(formValue);
+    //   for(i = 0; i < storedData.length; i++){
+    //     let firstData = storedData[i];
+    //     formValue[firstData] = "";
+    //   }
   });
 });

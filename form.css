@@ -330,7 +330,7 @@
   /* background-color: rgba(0, 0, 0, 0.753); */
   width: calc(100% - 6%);
   overflow: hidden;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   position: absolute;
   z-index: 9;
 }
